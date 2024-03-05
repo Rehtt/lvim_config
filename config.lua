@@ -17,6 +17,11 @@ formatters.setup({
   { name = 'goimports', filetype = { 'go' } }
 })
 
+
 -- 键位
 lvim.keys.insert_mode['<C-s>'] = '<ESC>:w<CR>' -- 保存
 lvim.keys.normal_mode['<C-s>'] = '<ESC>:w<CR>'
+
+lvim.transparent_window = true
+
+lvim.builtin.gitsigns.opts.current_line_blame = true
