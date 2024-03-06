@@ -7,6 +7,17 @@
 lvim.plugins        = {
   { 'fatih/vim-go' }, -- golang必备
   -- { 'easymotion/vim-easymotion' }, -- 跳转
+
+  -- 代码大纲
+  {
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+  },
 }
 
 -- 格式化
@@ -19,8 +30,9 @@ formatters.setup({
 
 
 -- 键位
-lvim.keys.insert_mode['<C-s>'] = '<ESC>:w<CR>' -- 保存
-lvim.keys.normal_mode['<C-s>'] = '<ESC>:w<CR>'
+lvim.keys.insert_mode['<C-s>'] = '<ESC>:w<CR>'     -- 保存
+lvim.keys.normal_mode['<C-s>'] = '<ESC>:w<CR>'     -- 保存
+lvim.keys.normal_mode['go'] = ':AerialToggle!<CR>' -- 大纲
 
 lvim.transparent_window = true
 
