@@ -30,9 +30,11 @@ formatters.setup({
 
 
 -- 键位
-lvim.keys.insert_mode['<C-s>'] = '<ESC>:w<CR>'     -- 保存
-lvim.keys.normal_mode['<C-s>'] = '<ESC>:w<CR>'     -- 保存
-lvim.keys.normal_mode['go'] = ':AerialToggle!<CR>' -- 大纲
+lvim.keys.insert_mode['<C-s>'] = '<ESC>:w<CR>'          -- 保存
+lvim.keys.normal_mode['<C-s>'] = '<ESC>:w<CR>'          -- 保存
+lvim.keys.normal_mode['go'] = '<ESC>:AerialToggle!<CR>' -- 大纲
+lvim.keys.normal_mode['<C-q>'] = '<ESC>:q<CR>'          -- 关闭窗口
+lvim.keys.normal_mode['<M-q>'] = '<ESC>:bp | bd #<CR>'  -- 关闭buffer
 
 lvim.transparent_window = true
 
