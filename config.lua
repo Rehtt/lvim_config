@@ -15,6 +15,23 @@ lvim.plugins        = {
     end
   },
 
+  -- copilot
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  },
+
+
   -- 代码大纲
   {
     'stevearc/aerial.nvim',
@@ -49,7 +66,6 @@ lvim.builtin.which_key.mappings['j'] = {
   c = { ':HopChar1MW<CR>', 'jump to on char' },
   C = { ':HopChar2MW<CR>', 'jump to two chars' },
 }
-
 
 
 lvim.transparent_window = true
