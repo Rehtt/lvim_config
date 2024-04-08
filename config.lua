@@ -66,6 +66,11 @@ lvim.builtin.which_key.mappings['j'] = {
   c = { ':HopChar1MW<CR>', 'jump to on char' },
   C = { ':HopChar2MW<CR>', 'jump to two chars' },
 }
+lvim.builtin.which_key.mappings['S'] = {              -- 滚动
+  name = "scrollbind",
+  b = { ':set scrollbind<CR>', 'set scrollbind' },    -- 当前页面同步滚动
+  n = { ':set noscrollbind<CR>', 'set noscrollbind' } -- 取消当前页面同步滚动
+}
 
 
 lvim.transparent_window = true
