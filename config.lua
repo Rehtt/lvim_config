@@ -71,6 +71,7 @@ lvim.builtin.which_key.mappings['S'] = {              -- 滚动
   b = { ':set scrollbind<CR>', 'set scrollbind' },    -- 当前页面同步滚动
   n = { ':set noscrollbind<CR>', 'set noscrollbind' } -- 取消当前页面同步滚动
 }
+lvim.keys.term_mode['<ESC><ESC>'] = [[<C-\><C-n>]]    -- 终端中进入normal_mode
 
 
 lvim.transparent_window = true
