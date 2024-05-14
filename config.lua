@@ -42,6 +42,11 @@ lvim.plugins        = {
       "nvim-tree/nvim-web-devicons"
     },
   },
+
+  -- 高亮多个单词
+  {
+    'lfv89/vim-interestingwords'
+  },
 }
 
 -- 格式化
