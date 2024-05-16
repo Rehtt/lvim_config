@@ -15,22 +15,33 @@ lvim.plugins                          = {
     end
   },
 
-  -- copilot
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({})
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end
-  },
-
+  -- -- copilot
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({})
+  --   end,
+  -- },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   config = function()
+  --     require("copilot_cmp").setup()
+  --   end
+  -- },
+  -- {
+  --   'Exafunction/codeium.vim',
+  --   event = 'BufEnter',
+  --   config = function()
+  --     vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+  --     vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end,
+  --       { expr = true, silent = true })
+  --     vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
+  --       { expr = true, silent = true })
+  --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+  --   end
+  -- },
 
   -- 代码大纲
   {
@@ -60,12 +71,13 @@ lvim.plugins                          = {
     end,
   },
 }
+-- vim.g.codeium_disable_bindings = 1
 
 -- 禁用vim-interestingwords默认快捷键
 vim.g.interestingWordsDefaultMappings = 0
 
 -- 格式化
-lvim.format_on_save                   = true
+lvim.format_on_save.enabled           = true
 local formatters                      = require('lvim.lsp.null-ls.formatters')
 formatters.setup({
   { name = 'gofumpt',   filetype = { 'go' } },
