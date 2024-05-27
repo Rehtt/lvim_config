@@ -91,6 +91,8 @@ lvim.keys.normal_mode['<C-s>'] = '<ESC>:w<CR>'                -- 保存
 lvim.keys.normal_mode['go'] = '<ESC>:AerialToggle!<CR><C-W>l' -- 打开大纲并切换窗口
 lvim.keys.normal_mode['<C-q>'] = '<ESC>:q<CR>'                -- 关闭窗口
 lvim.keys.normal_mode['<M-q>'] = '<ESC>:bp | bd #<CR>'        -- 关闭buffer
+lvim.keys.normal_mode['<M-h>'] = '<ESC>:bp<CR>'               -- 上一buffer
+lvim.keys.normal_mode['<M-l>'] = '<ESC>:bn<CR>'               -- 下一buffer
 lvim.keys.normal_mode['gm'] = '<ESC>:MinimapToggle<CR>'       -- 打开/关闭代码地图
 
 -- hadronized/hop.nvim 快捷键
