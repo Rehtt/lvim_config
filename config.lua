@@ -3,6 +3,23 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+-- cmp配置
+-- codeium.nvim
+table.insert(lvim.builtin.cmp.sources, 1, { name = "codeium" })
+lvim.builtin.cmp.formatting.source_names.codeium = "(Codeium)" -- 显示的名称
+local default_format                             = lvim.builtin.cmp.formatting.format
+lvim.builtin.cmp.formatting.format               = function(entry, vim_item)
+  vim_item = default_format(entry, vim_item)
+  -- 图标
+  if entry.source.name == "codeium" then
+    vim_item.kind = lvim.icons.ui.Fire
+    vim_item.kind_hl_group = "CmpItemKindTabnine"
+  end
+  return vim_item
+end
+
+
+
 -- 插件
 lvim.plugins                          = {
   { 'fatih/vim-go' }, -- golang必备
@@ -32,14 +49,14 @@ lvim.plugins                          = {
   -- },
   -- {
   --   'Exafunction/codeium.vim',
-  --   event = 'BufEnter',
+  -- {
+  --   "Exafunction/codeium.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "hrsh7th/nvim-cmp",
+  --   },
   --   config = function()
-  --     vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-  --     vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end,
-  --       { expr = true, silent = true })
-  --     vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
-  --       { expr = true, silent = true })
-  --     vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+  --     require("codeium").setup({})
   --   end
   -- },
 
@@ -71,7 +88,6 @@ lvim.plugins                          = {
     end,
   },
 }
--- vim.g.codeium_disable_bindings = 1
 
 -- 禁用vim-interestingwords默认快捷键
 vim.g.interestingWordsDefaultMappings = 0
