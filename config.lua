@@ -3,25 +3,8 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
--- cmp配置
--- codeium.nvim
-table.insert(lvim.builtin.cmp.sources, 1, { name = "codeium" })
-lvim.builtin.cmp.formatting.source_names.codeium = "(Codeium)" -- 显示的名称
-local default_format                             = lvim.builtin.cmp.formatting.format
-lvim.builtin.cmp.formatting.format               = function(entry, vim_item)
-  vim_item = default_format(entry, vim_item)
-  -- 图标
-  if entry.source.name == "codeium" then
-    vim_item.kind = lvim.icons.ui.Fire
-    vim_item.kind_hl_group = "CmpItemKindTabnine"
-  end
-  return vim_item
-end
-
-
-
 -- 插件
-lvim.plugins                          = {
+lvim.plugins = {
   { 'fatih/vim-go' }, -- golang必备
 
   -- 跳转
@@ -88,13 +71,27 @@ lvim.plugins                          = {
     end,
   },
 }
+-- cmp配置
+-- codeium.nvim
+table.insert(lvim.builtin.cmp.sources, 1, { name = "codeium" })
+lvim.builtin.cmp.formatting.source_names.codeium = "(Codeium)" -- 显示的名称
+local default_format                             = lvim.builtin.cmp.formatting.format
+lvim.builtin.cmp.formatting.format               = function(entry, vim_item)
+  vim_item = default_format(entry, vim_item)
+  -- 图标
+  if entry.source.name == "codeium" then
+    vim_item.kind = lvim.icons.ui.Fire
+    vim_item.kind_hl_group = "CmpItemKindTabnine"
+  end
+  return vim_item
+end
 
 -- 禁用vim-interestingwords默认快捷键
-vim.g.interestingWordsDefaultMappings = 0
+vim.g.interestingWordsDefaultMappings            = 0
 
 -- 格式化
-lvim.format_on_save.enabled           = true
-local formatters                      = require('lvim.lsp.null-ls.formatters')
+lvim.format_on_save.enabled                      = true
+local formatters                                 = require('lvim.lsp.null-ls.formatters')
 formatters.setup({
   { name = 'gofumpt',   filetype = { 'go' } },
   { name = 'goimports', filetype = { 'go' } }
@@ -138,7 +135,7 @@ lvim.keys.normal_mode['n']           = '<ESC>:call WordNavigation(1)<cr>'
 lvim.keys.normal_mode['N']           = '<ESC>:call WordNavigation(0)<cr>'
 
 
-lvim.transparent_window = true
+-- lvim.transparent_window = true
 
 lvim.builtin.gitsigns.opts.current_line_blame = true
 
@@ -188,4 +185,4 @@ local function useOSC52()
 end
 
 -- 按需打开
--- useOSC52()
+useOSC52()
