@@ -70,6 +70,11 @@ lvim.plugins = {
       vim.cmd("let g:minimap_auto_start_win_enter = 1")
     end,
   },
+
+  -- 获取插件启动时间
+  {
+    'dstein64/vim-startuptime'
+  },
 }
 -- cmp配置
 -- codeium.nvim
