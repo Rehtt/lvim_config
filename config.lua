@@ -191,3 +191,7 @@ end
 
 -- 按需打开
 useOSC52()
+
+
+-- 自定义logo
+-- lvim.builtin.alpha.dashboard.section.header.val = {}
