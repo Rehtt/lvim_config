@@ -1,4 +1,3 @@
-local OSC52 = {}
 -- 使用OSC 52联通剪切板
 -- 大多数终端由于安全原因只支持单向OSC 52，双向互通可以用xclip
 -- 支持OSC 52的终端有：
@@ -44,8 +43,4 @@ local function useOSC52()
   end
 end
 
-function OSC52.setup()
-  useOSC52()
-end
-
-return OSC52
+useOSC52()

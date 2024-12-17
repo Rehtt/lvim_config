@@ -11,7 +11,7 @@ require('userconfig.format')
 
 require('userconfig.keymapping')
 
-require('userconfig.osc52').setup()
+require('userconfig.osc52')
 
 require('userconfig.dap.go')
 
