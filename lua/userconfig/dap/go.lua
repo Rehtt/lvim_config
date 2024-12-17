@@ -68,7 +68,9 @@ dap.configurations.go = {
     name = "Debug Project",
     request = "launch",
     args = get_args,
-    program = "${workspaceFolder}",
+    program = function()
+      return vim.fn.input("Path to executable:", vim.fn.getcwd() .. "/", "file")
+    end,
   },
 
 }
