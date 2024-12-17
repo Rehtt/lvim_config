@@ -13,6 +13,8 @@ require('userconfig.keymapping')
 
 require('userconfig.osc52').setup()
 
+require('userconfig.dap.go')
+
 -- lvim.transparent_window = true
 
 lvim.builtin.gitsigns.opts.current_line_blame = true
