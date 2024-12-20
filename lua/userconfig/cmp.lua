@@ -14,5 +14,5 @@ lvim.builtin.cmp.formatting.format               = function(entry, vim_item)
 end
 
 -- 修改代码提示器光标逻辑
--- lvim.builtin.cmp.preselect                       = "none"
+lvim.builtin.cmp.preselect                       = "none"
 lvim.builtin.cmp.completion.completeopt          = "menu,menuone,noinsert"
