@@ -19,8 +19,14 @@ local function insert(text)
 end
 
 local mit = require("userconfig.filltext.mit")
+local user = require("userconfig.filltext.user")
 function M.insert_mit_license()
   local text = mit.mit_license()
+  insert(text)
+end
+
+function M.insert_user_info()
+  local text = user.text()
   insert(text)
 end
 

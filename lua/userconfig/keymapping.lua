@@ -37,7 +37,9 @@ lvim.keys.normal_mode['N']            = '<ESC>:call WordNavigation(0)<cr>'
 -- 禁用vim-interestingwords默认快捷键
 vim.g.interestingWordsDefaultMappings = 0
 
+local functions                       = require('userconfig.filltext.filltext')
 lvim.builtin.which_key.mappings['F']  = {
   name = "Fill Text",
-  m = { function() require("userconfig.filltext.filltext").insert_mit_license() end, "MIT" },
+  m = { function() functions.insert_mit_license() end, "MIT" },
+  u = { function() functions.insert_user_info() end, "User Info" }
 }
