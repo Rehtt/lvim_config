@@ -1,6 +1,12 @@
 -- 插件
 lvim.plugins = {
-  { 'fatih/vim-go' }, -- golang必备
+  {
+    'fatih/vim-go',
+    config = function()
+      -- 使用gopls内置的gofumpt
+      vim.cmd('let g:go_gopls_gofumpt = 1')
+    end
+  }, -- golang必备
 
   -- 跳转
   {
