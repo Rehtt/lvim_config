@@ -21,18 +21,3 @@ lvim.builtin.gitsigns.opts.current_line_blame = true
 
 -- 自定义logo
 -- lvim.builtin.alpha.dashboard.section.header.val = {}
-
--- 切换gopls的build tags
--- :lua SetGoBuildTags("tag")
-function SetGoBuildTags(tags)
-  local lspconfig = require 'lspconfig'
-  lspconfig.gopls.setup {
-    settings = {
-      gopls = {
-        buildFlags = { "-tags=" .. tags }
-      }
-    }
-  }
-  -- 手动重新启动 LSP 客户端
-  vim.cmd('LspRestart')
-end
