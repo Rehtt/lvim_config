@@ -8,6 +8,10 @@ lvim.keys.normal_mode['<M-h>']        = '<ESC>:bp<CR>'                          
 lvim.keys.normal_mode['<M-l>']        = '<ESC>:bn<CR>'                           -- 下一buffer
 lvim.keys.normal_mode['gm']           = '<ESC>:MinimapToggle<CR>'                -- 打开/关闭代码地图
 lvim.builtin.cmp.mapping["<C-z>"]     = require("cmp.config.mapping").complete() -- cmp手动补全，因为默认的<C-Spect>和windows10 11输入法冲突
+lvim.keys.insert_mode['<M-h>']        = '<C-o>b'                                 -- 移动光标到左边一个单词
+lvim.keys.insert_mode['<M-l>']        = '<C-o>w'                                 -- 移动光标到右边一个单词
+lvim.keys.insert_mode['<C-h>']        = '<C-o>h'                                 -- 移动光标到左边一个字符
+lvim.keys.insert_mode['<C-l>']        = '<C-o>l'                                 -- 移动光标到右边一个字符
 
 -- hadronized/hop.nvim 快捷键
 lvim.builtin.which_key.mappings['j']  = {
