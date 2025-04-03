@@ -35,6 +35,11 @@ lvim.builtin.which_key.mappings['k']  = {
   v = { ":call InterestingWords('v')<cr>", "InterestingWords('v')" }, -- 高亮选中段落
   K = { ":call UncolorAllWords()<cr>", "UncolorAllWords()" }          -- 取消高亮
 }
+-- 在选中模式下高亮
+lvim.builtin.which_key.vmappings['k'] = {
+  name = "Highlight",
+  k = { ":call InterestingWords('v')<cr>", "InterestingWords('v')" }
+}
 lvim.keys.normal_mode['n']            = '<ESC>:call WordNavigation(1)<cr>'
 lvim.keys.normal_mode['N']            = '<ESC>:call WordNavigation(0)<cr>'
 
