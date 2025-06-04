@@ -13,7 +13,11 @@ require('userconfig.keymapping')
 
 require('userconfig.osc52')
 
+-- dap
 require('userconfig.dap.go')
+
+-- lsp
+require('userconfig.lsp.arduino')
 
 -- lvim.transparent_window = true
 
