@@ -17,7 +17,8 @@ require('userconfig.osc52')
 require('userconfig.dap.go')
 
 -- lsp
-require('userconfig.lsp.arduino')
+-- 按需开启
+-- require('userconfig.lsp.arduino')
 
 -- lvim.transparent_window = true
 
