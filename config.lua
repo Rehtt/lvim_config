@@ -24,5 +24,8 @@ require('userconfig.dap.go')
 
 lvim.builtin.gitsigns.opts.current_line_blame = true
 
+-- enable treesitter integration
+lvim.builtin.treesitter.matchup.enable = true
+
 -- 自定义logo
 -- lvim.builtin.alpha.dashboard.section.header.val = {}

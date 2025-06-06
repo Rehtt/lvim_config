@@ -89,13 +89,31 @@ lvim.plugins = {
   -- 包裹符号
   -- 选中词后按下S再按下需要包裹的符号
   {
-    'tpope/vim-surround'
+    'tpope/vim-surround',
+    event = "CursorMoved", -- 光标移动时自动加载
   },
 
   -- 撤销树
   {
     'mbbill/undotree',
-  }
+  },
+
+  -- 跳转匹配高亮
+  {
+    "andymass/vim-matchup",
+    event = "CursorMoved",                                      -- 光标移动时自动加载
+    config = function()
+      vim.g.matchup_matchparen_offscreen = { method = "popup" } -- 超出视野括号显示为浮窗
+    end,
+  },
+
+  -- 自动闭合html标签
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
 
   -- -- 折叠代码 按需打开，觉得先熟悉自带的折叠命令比较好
   -- {
