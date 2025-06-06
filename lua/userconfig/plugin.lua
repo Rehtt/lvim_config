@@ -76,6 +76,27 @@ lvim.plugins = {
     'dstein64/vim-startuptime'
   },
 
+  -- 打开大文件时自动禁用一些会拖慢 Neovim 的功能
+  {
+    'LunarVim/bigfile.nvim'
+  },
+
+  -- 自动恢复光标位置
+  {
+    'farmergreg/vim-lastplace'
+  },
+
+  -- 包裹符号
+  -- 选中词后按下S再按下需要包裹的符号
+  {
+    'tpope/vim-surround'
+  },
+
+  -- 撤销树
+  {
+    'mbbill/undotree',
+  }
+
   -- -- 折叠代码 按需打开，觉得先熟悉自带的折叠命令比较好
   -- {
   --   'kevinhwang91/nvim-ufo',

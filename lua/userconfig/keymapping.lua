@@ -52,3 +52,8 @@ lvim.builtin.which_key.mappings['F']  = {
   m = { function() functions.insert_mit_license() end, "MIT" },
   u = { function() functions.insert_user_info() end, "User Info" }
 }
+
+-- mbbill/undotree
+lvim.builtin.which_key.mappings['u']  = {
+  { ":UndotreeToggle<cr>", "Undo Tree" }, -- 打开/关闭撤销树
+}
