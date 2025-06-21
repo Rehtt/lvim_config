@@ -12,6 +12,8 @@ lvim.keys.insert_mode['<M-h>']        = '<C-o>b'                                
 lvim.keys.insert_mode['<M-l>']        = '<C-o>w'                                 -- 移动光标到右边一个单词
 lvim.keys.insert_mode['<C-h>']        = '<C-o>h'                                 -- 移动光标到左边一个字符
 lvim.keys.insert_mode['<C-l>']        = '<C-o>l'                                 -- 移动光标到右边一个字符
+lvim.keys.insert_mode['<C-j>']        = '<C-o>j'                                 -- 移动光标到下一行
+lvim.keys.insert_mode['<C-k>']        = '<C-o>k'                                 -- 移动光标到上一行
 
 -- hadronized/hop.nvim 快捷键
 lvim.builtin.which_key.mappings['j']  = {
