@@ -115,6 +115,20 @@ lvim.plugins = {
     end,
   },
 
+  -- 标记
+  {
+    "chentoast/marks.nvim",
+    config = function()
+      require 'marks'.setup {
+        default_mappings = true,
+        -- 可以自定义键位、符号等
+        signs = true,
+        builtin_marks = { ".", "<", ">", "^" },
+        cyclic = true,
+      }
+    end
+  },
+
   -- -- 折叠代码 按需打开，觉得先熟悉自带的折叠命令比较好
   -- {
   --   'kevinhwang91/nvim-ufo',

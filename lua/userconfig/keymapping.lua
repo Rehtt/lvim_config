@@ -59,3 +59,16 @@ lvim.builtin.which_key.mappings['F']  = {
 lvim.builtin.which_key.mappings['u']  = {
   { ":UndotreeToggle<cr>", "Undo Tree" }, -- 打开/关闭撤销树
 }
+
+-- chentoast/marks.nvim
+lvim.builtin.which_key.mappings['m']  = {
+  name = "Marks",
+  a = { ":MarksListAll<CR>", "MarksListAll" },
+  b = { ":MarksListBuf<CR>", "MarksListBuf" },
+}
+
+
+-- 插入模式下 Ctrl+← 跳到上一个词首并继续插入
+vim.keymap.set("i", "<C-Left>", "<Esc>bi", { silent = true })
+-- 插入模式下 Ctrl+→ 跳到下一个词尾并继续插入（光标停在词尾后面）
+vim.keymap.set("i", "<C-Right>", "<Esc>ea", { silent = true })

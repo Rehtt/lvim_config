@@ -29,8 +29,3 @@ lvim.builtin.treesitter.matchup.enable = true
 
 -- 自定义logo
 -- lvim.builtin.alpha.dashboard.section.header.val = {}
-
--- 插入模式下 Ctrl+← 跳到上一个词首并继续插入
-vim.keymap.set("i", "<C-Left>", "<Esc>bi", { silent = true })
--- 插入模式下 Ctrl+→ 跳到下一个词尾并继续插入（光标停在词尾后面）
-vim.keymap.set("i", "<C-Right>", "<Esc>ea", { silent = true })
