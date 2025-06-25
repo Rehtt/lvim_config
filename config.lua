@@ -20,6 +20,9 @@ require('userconfig.dap.go')
 -- 按需开启
 -- require('userconfig.lsp.arduino')
 
+-- 自定义脚本命令
+require('userconfig.script')
+
 -- lvim.transparent_window = true
 
 lvim.builtin.gitsigns.opts.current_line_blame = true
