@@ -24,3 +24,6 @@ end, {
   desc = '将当前文件从DOS格式转换为Unix格式',
   bang = false
 })
+
+-- 允许block模式
+vim.o.virtualedit = 'block'
