@@ -177,4 +177,17 @@ lvim.plugins = {
   --   end
   -- },
 
+  -- 光标拖影，使用字符模拟的，会影响一些性能，可按需开启
+  -- {
+  --   "sphamba/smear-cursor.nvim",
+  --   config = function()
+  --     require("smear_cursor").setup({
+  --       stiffness = 0.5,
+  --       trailing_stiffness = 0.5,
+  --       -- never_draw_over_target = false
+  --       distance_stop_animating = 0.5
+  --     })
+  --   end
+  -- }
+
 }
