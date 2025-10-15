@@ -12,10 +12,9 @@ function M.mit_license()
 
   -- MIT协议模板
   local mit_template = [[
-
 MIT License
 
-Copyright (c) ]] .. year .. [[ ]] .. git_user .. [[
+Copyright (c) %s %s
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -37,7 +36,26 @@ SOFTWARE.
 
 ]]
 
-  return mit_template
+  return string.format(mit_template, year, git_user)
+end
+
+function M.mit_head_license()
+  -- 获取当前年份
+  local year = os.date("%Y")
+
+  -- 获取git用户名
+  local git_user = vim.fn.system("git config user.name"):gsub("%s+$", "")
+  if git_user == "" then
+    git_user = vim.fn.input("Show name:")
+  end
+
+  local template = [[
+Copyright (c) %s %s
+Use of this source code is governed by an MIT-style
+license that can be found in the LICENSE file.
+
+]]
+  return string.format(template, year, git_user)
 end
 
 return M

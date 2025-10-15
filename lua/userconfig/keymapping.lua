@@ -52,6 +52,7 @@ local functions                       = require('userconfig.filltext.filltext')
 lvim.builtin.which_key.mappings['F']  = {
   name = "Fill Text",
   m = { function() functions.insert_mit_license() end, "MIT" },
+  h = { function() functions.insert_mit_head_license() end, "MIT File Head" },
   u = { function() functions.insert_user_info() end, "User Info" }
 }
 

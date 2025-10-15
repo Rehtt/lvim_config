@@ -27,3 +27,20 @@ end, {
 
 -- 允许block模式
 vim.o.virtualedit = 'block'
+
+
+-- 在新建go文件时自动插入MIT协议
+-- local filltext = require('userconfig.filltext.filltext')
+-- local filltext_mit = require('userconfig.filltext.mit')
+-- local filltext_user = require('userconfig.filltext.user')
+
+-- local ok, nvimtree = pcall(require, "nvim-tree")
+-- if ok then
+--   local events = require("nvim-tree.api").events
+--   events.subscribe(events.Event.FileCreated, function(file)
+--     local filepath = file.fname
+--     if filepath:match("%.go$") then
+--       filltext.insert_file_and_comment(filepath, filltext_mit.mit_head_license() .. filltext_user.text())
+--     end
+--   end)
+-- end
