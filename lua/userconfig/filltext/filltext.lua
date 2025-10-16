@@ -13,9 +13,9 @@ function M.insert(text)
   vim.api.nvim_paste(text, false, -1)
   vim.api.nvim_command("normal! gg0")
 
+  vim.api.nvim_win_set_cursor(0, { 1, 0 })
   local api = require('Comment.api')
-  local config = require('Comment.config')
-  api.toggle.linewise.count(lines, config)
+  api.toggle.linewise.count(lines)
 end
 
 function M.insert_file_and_comment(filepath, text)
@@ -25,17 +25,14 @@ function M.insert_file_and_comment(filepath, text)
   -- 加载或打开 buffer
   local bufnr = vim.fn.bufadd(filepath)
   vim.fn.bufload(bufnr)
-
-  -- 在文件顶部插入文本
-  vim.api.nvim_buf_set_lines(bufnr, 0, 0, false, lines)
-
-  -- 使用 Comment.nvim 的 API 进行注释
-  local api = require("Comment.api")
-
   vim.api.nvim_set_current_buf(bufnr)
 
+  vim.api.nvim_buf_set_lines(bufnr, 0, 0, false, lines)
+  vim.api.nvim_win_set_cursor(0, { 1, 0 })
+
   -- 选择插入的行进行注释
-  api.toggle.linewise.count(#lines, require("Comment.config"))
+  local api = require("Comment.api")
+  api.toggle.linewise.count(#lines)
 end
 
 local mit = require("userconfig.filltext.mit")

@@ -16,8 +16,8 @@ function M.text()
   end
 
   local template = [[
- @Author: %s %s
- @Date: %s
+@Author: %s %s
+@Date: %s
 
 ]]
 
